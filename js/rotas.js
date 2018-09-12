@@ -1,13 +1,13 @@
 var rotas = function (obj) {
     var nomeView = obj.attr('href').replace('#', '') + '.html';
     $.ajax({
-        url: nomeView,
+        url: 'views/'+nomeView,
         type: 'GET',
         dataType: 'html',
         beforeSend: function () {
 
         },
-        sucess: function (viewHtml) {
+        success: function (viewHtml) {
             $('#conteudo').html(viewHtml);
         },
         error: function () {
@@ -16,9 +16,8 @@ var rotas = function (obj) {
     })
 };
 $(function () {
-    
-    $('#navbar-nav a').on('click', function () {
-        console.log('dasdf')
+    $('.navbar-nav a').on('click', function () {
         rotas($(this));
     });
+    $('#home').trigger('click');
 });
