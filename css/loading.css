@@ -1,5 +1,13 @@
-.lds-ring {
-    display: inline-block;
+.pre-loader {
+  background-color: rgba(236,240,245,1);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9999999;
+}
+.lds-ring {    display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
