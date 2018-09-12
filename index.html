@@ -8,11 +8,14 @@
   <title>Livraria - </title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/loading.css">
 </head>
-
 <body>
+    <div class="pre-loader" style="display: none">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>  
+    </div>
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <a class="navbar-brand" href="#">Livraria</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -55,6 +58,17 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script>
+  $('.pre-loader')
+    .hide()  // Hide it initially
+    .ajaxStart(function() {
+        $(this).show();
+    })
+    .ajaxStop(function() {
+        $(this).hide();
+    })
+;
+  </script>
   <script src="js/rotas.js"></script>
 </body>
 
