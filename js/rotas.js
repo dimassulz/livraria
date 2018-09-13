@@ -16,7 +16,7 @@ var rotas = function (obj) {
     })
 };
 $(function () {
-    $('.navbar-nav a').on('click', function () {
+    $('.navbar-nav a, .navbar-brand ').on('click', function () {
         $('.nav-item').removeClass('active');
         rotas($(this));
         $(this).parent().addClass('active');
